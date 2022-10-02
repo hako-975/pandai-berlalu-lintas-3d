@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1 : MonoBehaviour
+public class Car : MonoBehaviour
 {
     new Animation animation;
 
@@ -14,9 +14,9 @@ public class Level1 : MonoBehaviour
     void Start()
     {
         animation = GetComponentInChildren<Animation>();
-        CarForward();
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (animation.isPlaying == false)
@@ -25,7 +25,6 @@ public class Level1 : MonoBehaviour
             {
                 transform.position = childObject.transform.position;
                 childObject.transform.localPosition = Vector3.zero;
-                childObject.transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
                 forward = false;
             }
         }
@@ -33,6 +32,13 @@ public class Level1 : MonoBehaviour
 
     public void CarForward()
     {
+        if (forward)
+        {
+            animation.Stop();
+            transform.position = childObject.transform.position;
+            childObject.transform.localPosition = Vector3.zero;
+            forward = false;
+        }
         animation.Play("Forward");
         forward = true;
     }

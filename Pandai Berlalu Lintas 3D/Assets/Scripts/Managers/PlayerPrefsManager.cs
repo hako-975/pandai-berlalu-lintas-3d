@@ -54,4 +54,9 @@ public class PlayerPrefsManager : MonoBehaviour
         return GetCurrentLevel();
     }
     #endregion
+
+    public void DeleteKey(string nameKey)
+    {
+        PlayerPrefs.DeleteKey(nameKey);
+    }
 }
