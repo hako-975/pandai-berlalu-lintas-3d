@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class QuestionTrigger : MonoBehaviour
 {
-    public GameObject questionPanel;
-    
+    public int questTo = 1;
+    LevelManager levelManager;
+
     void Start()
     {
-        questionPanel.SetActive(false);
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            questionPanel.SetActive(true);
+            InvokeRepeating("CheckAnimCar", 1, 0.1f);
+        }
+    }
+
+    void CheckAnimCar()
+    {
+        if (levelManager.car.animationIsPlaying == false)
+        {
+            levelManager.questionsPanel[questTo - 1].SetActive(true);
+        }
+        else
+        {
+            CancelInvoke();
         }
     }
 }

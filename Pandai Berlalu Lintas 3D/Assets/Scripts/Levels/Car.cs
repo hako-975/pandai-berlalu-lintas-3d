@@ -7,8 +7,9 @@ public class Car : MonoBehaviour
     new Animation animation;
 
     public GameObject childObject;
-    
-    bool forward = false;
+
+    [HideInInspector]
+    public bool animationIsPlaying = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,31 +17,19 @@ public class Car : MonoBehaviour
         animation = GetComponentInChildren<Animation>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (animation.isPlaying == false)
+        animationIsPlaying = animation.isPlaying;
+        if (animationIsPlaying == false)
         {
-            if (forward)
-            {
-                transform.position = childObject.transform.position;
-                childObject.transform.localPosition = Vector3.zero;
-                forward = false;
-            }
+            transform.position = childObject.transform.position;
+            childObject.transform.localPosition = Vector3.zero;
         }
     }
 
     public void CarForward()
     {
-        if (forward)
-        {
-            animation.Stop();
-            transform.position = childObject.transform.position;
-            childObject.transform.localPosition = Vector3.zero;
-            forward = false;
-        }
         animation.Play("Forward");
-        forward = true;
     }
 
     public void CarBackward()
@@ -51,5 +40,25 @@ public class Car : MonoBehaviour
     public void CarIdle()
     {
         animation.Play("Idle");
+    }
+
+    public void CarTurnRight()
+    {
+        animation.Play("TurnRight");
+    }
+
+    public void CarTurnRightSmall()
+    {
+        animation.Play("TurnRightSmall");
+    }
+
+    public void CarTurnLeft()
+    {
+        animation.Play("TurnLeft");
+    }
+    
+    public void CarTurnLeftSmall()
+    {
+        animation.Play("TurnLeftSmall");
     }
 }
