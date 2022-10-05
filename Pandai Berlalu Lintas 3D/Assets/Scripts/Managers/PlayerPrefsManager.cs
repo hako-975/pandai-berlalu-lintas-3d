@@ -55,6 +55,77 @@ public class PlayerPrefsManager : MonoBehaviour
     }
     #endregion
 
+    #region Star
+    // get star boolean at level
+    public int GetStarToBoolean(int starTo, int level)
+    {
+        return PlayerPrefs.GetInt("StarTo" + starTo + "Level" + level, 0);
+    }
+
+    // set star boolean at level
+    public void SetStarToBoolean(int starTo, int level, int boolean)
+    {
+        PlayerPrefs.SetInt("StarTo" + starTo + "Level" + level, boolean);
+    }
+
+    // get temp star timer boolean at level
+    public int GetTempStarTimerToBoolean(int level)
+    {
+        return PlayerPrefs.GetInt("TempStarTimerLevelBoolean" + level, 0);
+    }
+
+    // set temp star timer boolean at level
+    public void SetTempStarTimerToBoolean(int level, int boolean)
+    {
+        PlayerPrefs.SetInt("TempStarTimerLevelBoolean" + level, boolean);
+    }
+
+    // delete all temp star boolean with current level
+    public void DeleteAllTempStarTimerToBoolean()
+    {
+        for (int i = 1; i <= GetLevelAt() + 1; i++)
+        {
+            PlayerPrefs.DeleteKey("TempStarTimerLevelBoolean" + i);
+        }
+    }
+    #endregion
+
+    #region Settings
+    public float GetVolumeMusic()
+    {
+        return PlayerPrefs.GetFloat("VolumeMusic", -5f);
+    }
+
+    public float SetVolumeMusic(float volumeMusic)
+    {
+        PlayerPrefs.SetFloat("VolumeMusic", volumeMusic);
+        return GetVolumeMusic();
+    }
+
+    public float GetVolumeSFX()
+    {
+        return PlayerPrefs.GetFloat("VolumeSFX", -5f);
+    }
+
+    public float SetVolumeSFX(float volumeSFX)
+    {
+        PlayerPrefs.SetFloat("VolumeSFX", volumeSFX);
+        return GetVolumeSFX();
+    }
+
+    public int GetGraphics()
+    {
+        // index of high
+        return PlayerPrefs.GetInt("QualityIndex", 1);
+    }
+
+    public int SetGraphics(int qualityIndex)
+    {
+        PlayerPrefs.SetInt("QualityIndex", qualityIndex);
+        return GetGraphics();
+    }
+    #endregion
+
     public void DeleteKey(string nameKey)
     {
         PlayerPrefs.DeleteKey(nameKey);
