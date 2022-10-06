@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d5480912f7a1d7a4294a1ce13a774f7d
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 20300
   internalIDToNameTable:
   - first:
       1: 100000
@@ -2749,7 +2749,7 @@ ModelImporter:
       name: TT_demo
     second: {fileID: 2100000, guid: 87dac164c1ca4ab4395461ac4753fe2f, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
     materialLocation: 1
@@ -2787,11 +2787,13 @@ ModelImporter:
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -2801,6 +2803,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -2813,7 +2818,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human:
@@ -3161,20 +3165,17 @@ ModelImporter:
     - name: weapon_ak47
       parentName: 
       position: {x: -0.000000048446655, y: -0.00000009689331, z: -0.000000024223327}
-      rotation: {x: 0.00000075707237, y: -0.00000010120589, z: -0.00000003811642,
-        w: 1}
+      rotation: {x: 0.00000075707237, y: -0.00000010120589, z: -0.00000003811642, w: 1}
       scale: {x: 0.35428697, y: 0.35428712, z: 0.35428673}
     - name: weapon_deserteagle
       parentName: 
       position: {x: -0.000000042390823, y: -0.00000009689331, z: 0.000000024223327}
-      rotation: {x: 0.00000028192423, y: -0.000000006607531, z: 0.00000024448119,
-        w: 1}
+      rotation: {x: 0.00000028192423, y: -0.000000006607531, z: 0.00000024448119, w: 1}
       scale: {x: 0.42284155, y: 0.42284167, z: 0.42284137}
     - name: weapon_tester
       parentName: 
       position: {x: 0.000000006055832, y: 0, z: 0}
-      rotation: {x: 0.00000002538204, y: -0.0000000031727547, z: -0.0000000031727547,
-        w: 1}
+      rotation: {x: 0.00000002538204, y: -0.0000000031727547, z: -0.0000000031727547, w: 1}
       scale: {x: 1.1741502, y: 1.17415, z: 1.17415}
     - name: Body_01_blackjacket
       parentName: 
@@ -3434,8 +3435,12 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
