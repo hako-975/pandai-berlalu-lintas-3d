@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 2354074024637727510}
   - component: {fileID: 2363526945130928278}
   - component: {fileID: 2372851877151611934}
-  - component: {fileID: 2331020831631237882}
   m_Layer: 0
   m_Name: Grass_stone_01
   m_TagString: Untagged
@@ -115,17 +114,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2331020831631237882
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2359835186459571720}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 0fe782be48025f043b62b5e25719953c, type: 3}

@@ -26,7 +26,7 @@ public class BackButton : MonoBehaviour
         backButton.onClick.AddListener(delegate { BackButtonAction(); });
     }
 
-    void BackButtonAction()
+    public void BackButtonAction()
     {
         sfx.NegativeButton();
         gameObject.SetActive(false);

@@ -104,7 +104,7 @@ public class MainMenuManager : MonoBehaviour
 
         yield return new WaitForSeconds(buttonType.clip.length);
 
-        LoadingManager.instance.LoadGame(lastScene);
+        PlayerPrefsManager.instance.SetNextScene(lastScene);
     }
 
     IEnumerator WaitSoundEffectToQuit()
@@ -120,6 +120,6 @@ public class MainMenuManager : MonoBehaviour
     {
         sfx.StartButton();
         yield return new WaitForSeconds(sfx.startButton.clip.length);
-        LoadingManager.instance.LoadGame(sceneName);
+        PlayerPrefsManager.instance.SetNextScene(sceneName);
     }
 }

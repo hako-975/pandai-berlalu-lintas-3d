@@ -337,6 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7365054521060205073}
   - component: {fileID: 7365054521060205074}
+  - component: {fileID: 4239449959677003497}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -379,6 +380,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4239449959677003497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365054521060205075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf292ddb48b8ec94da5920df61ebc32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7365054521095329188
 GameObject:
   m_ObjectHideFlags: 0

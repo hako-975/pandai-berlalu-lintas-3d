@@ -67,7 +67,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
-  gameOverMessage: Kamu Kecelakaan!
+  gameOverMessage: "Kamu Kecelakaan! \nPerhatikanlah rambu lalu lintas agar selamat
+    sampai tujuan!"
+  rightAnswer: Berhenti
+  isGameOver: 0
 --- !u!65 &360512941694728379
 BoxCollider:
   m_ObjectHideFlags: 0

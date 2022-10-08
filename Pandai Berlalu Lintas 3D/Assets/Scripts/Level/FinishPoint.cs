@@ -5,7 +5,8 @@ using UnityEngine;
 public class FinishPoint : MonoBehaviour
 {
     public GameObject finishPanel;
-    
+    [HideInInspector]
+    public bool isFinished = false;
     int nextSceneLoad;
     int currentLevel;
 
@@ -35,7 +36,7 @@ public class FinishPoint : MonoBehaviour
                 PlayerPrefsManager.instance.SetLevelAt(nextSceneLoad);
             }
 
-            finishPanel.SetActive(true);
+            isFinished = true;
         }
     }
 }
