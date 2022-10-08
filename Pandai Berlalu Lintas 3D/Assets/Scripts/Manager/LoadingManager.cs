@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    public Slider slider;
+    public Image image;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class LoadingManager : MonoBehaviour
             while (!sync.isDone)
             {
                 float progress = Mathf.Clamp01(sync.progress);
-                slider.value += progress;
+                image.fillAmount += progress;
                 yield return new WaitForEndOfFrame();
             }
         }
