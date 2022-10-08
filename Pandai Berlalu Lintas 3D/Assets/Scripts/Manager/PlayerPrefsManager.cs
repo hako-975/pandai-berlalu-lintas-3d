@@ -50,7 +50,7 @@ public class PlayerPrefsManager : MonoBehaviour
     public int SetCurrentLevel()
     {
         // level 1, build index 1
-        PlayerPrefs.SetInt("CurrentLevel", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.SetInt("CurrentLevel", SceneManager.GetSceneAt(1).buildIndex);
         return GetCurrentLevel();
     }
     #endregion

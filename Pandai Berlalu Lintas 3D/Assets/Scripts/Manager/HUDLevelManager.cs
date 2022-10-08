@@ -7,11 +7,11 @@ public class HUDLevelManager : MonoBehaviour
 {
     public void RestartGame()
     {
-        PlayerPrefsManager.instance.SetNextScene(SceneManager.GetActiveScene().name);
+        LoadingManager.instance.LoadGame(SceneManager.GetSceneAt(1).name);
     }
 
     public void MainMenu()
     {
-        PlayerPrefsManager.instance.SetNextScene("MainMenu");
+        LoadingManager.instance.LoadGame("MainMenu");
     }
 }

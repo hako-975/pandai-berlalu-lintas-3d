@@ -6,32 +6,38 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    public Image image;
+    public GameObject loadingScreen;
 
-    void Start()
+    public static LoadingManager instance;
+    
+    void Awake()
     {
-        StartCoroutine(LoadAsync(PlayerPrefsManager.instance.GetNextScene()));
+        instance = this;
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
     }
 
-    IEnumerator LoadAsync(string nextScene)
+    List<AsyncOperation> scenesLoading = new List<AsyncOperation>();
+
+    public void LoadGame(string loadScene)
     {
-        AsyncOperation sync = SceneManager.LoadSceneAsync(nextScene);
+        loadingScreen.SetActive(true);
 
-        // set to main menu
-        PlayerPrefsManager.instance.DeleteKey("NextScene");
+        scenesLoading.Add(SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1)));
+        scenesLoading.Add(SceneManager.LoadSceneAsync(loadScene, LoadSceneMode.Additive));
 
-        if (sync == null)
+        StartCoroutine(GetSceneLoadProgress());
+    }
+
+    IEnumerator GetSceneLoadProgress()
+    {
+        for (int i = 0; i < scenesLoading.Count; i++)
         {
-            SceneManager.LoadScene("MainMenu");
-        }
-        else
-        {
-            while (!sync.isDone)
+            while (!scenesLoading[i].isDone)
             {
-                float progress = Mathf.Clamp01(sync.progress);
-                image.fillAmount += progress;
-                yield return new WaitForEndOfFrame();
+                yield return null;
             }
         }
+
+        loadingScreen.SetActive(false);
     }
 }

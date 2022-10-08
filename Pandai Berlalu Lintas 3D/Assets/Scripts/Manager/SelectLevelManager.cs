@@ -139,6 +139,6 @@ public class SelectLevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(buttonType.clip.length);
 
-        PlayerPrefsManager.instance.SetNextScene(nextScene);
+        LoadingManager.instance.LoadGame(nextScene);
     }
 }
