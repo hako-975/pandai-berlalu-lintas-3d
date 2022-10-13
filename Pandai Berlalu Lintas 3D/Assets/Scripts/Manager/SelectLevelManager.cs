@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SelectLevelManager : MonoBehaviour
 {
     public Button[] levelButtons;
-
+    
     public int TextMeshUGUI { get; private set; }
 
     SFXManager sfx;
@@ -23,26 +23,6 @@ public class SelectLevelManager : MonoBehaviour
         {
             int level = i;
 
-            levelButtons[i].
-                transform.GetChild(1).
-                transform.GetChild(0).
-                GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
-            levelButtons[i].
-                transform.GetChild(1).
-                transform.GetChild(1).
-                GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
-            levelButtons[i].
-                transform.GetChild(1).
-                transform.GetChild(2).
-                GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
-            levelButtons[i].
-                transform.GetChild(1).
-                transform.GetChild(3).
-                GetComponentInChildren<Image>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-
             level += 1;
             levelButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = level.ToString();
 
@@ -56,26 +36,6 @@ public class SelectLevelManager : MonoBehaviour
             for (int j = 0; j < levelAt; j++)
             {
                 levelButtons[j].interactable = true;
-
-                levelButtons[j].
-                    transform.GetChild(1).
-                    transform.GetChild(0).
-                    GetComponentInChildren<Image>().color = Color.white;
-
-                levelButtons[j].
-                    transform.GetChild(1).
-                    transform.GetChild(1).
-                    GetComponentInChildren<Image>().color = Color.white;
-
-                levelButtons[j].
-                    transform.GetChild(1).
-                    transform.GetChild(2).
-                    GetComponentInChildren<Image>().color = Color.white;
-
-                levelButtons[j].
-                    transform.GetChild(1).
-                    transform.GetChild(3).
-                    GetComponentInChildren<Image>().color = Color.white;
 
                 int l = j;
 
@@ -119,7 +79,14 @@ public class SelectLevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BackButtonAction();
+            if (FindObjectOfType<BackButton>())
+            {
+                FindObjectOfType<BackButton>().BackButtonAction();
+            }
+            else
+            {
+                BackButtonAction();
+            }
         }
     }
 

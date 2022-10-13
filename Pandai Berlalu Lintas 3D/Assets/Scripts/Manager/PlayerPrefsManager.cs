@@ -56,6 +56,29 @@ public class PlayerPrefsManager : MonoBehaviour
     #endregion
 
     #region Star
+    // get temp star boolean at level
+    public int GetTempStarToBoolean(int starTo, int level)
+    {
+        return PlayerPrefs.GetInt("TempStarTo" + starTo + "Level" + level, 0);
+    }
+
+    // set temp star boolean at level
+    public void SetTempStarToBoolean(int starTo, int level, int boolean)
+    {
+        PlayerPrefs.SetInt("TempStarTo" + starTo + "Level" + level, boolean);
+    }
+
+    // delete all temp star boolean with current level
+    public void DeleteAllTempStarToBoolean()
+    {
+        for (int i = 1; i <= GetLevelAt() + 1; i++)
+        {
+            PlayerPrefs.DeleteKey("TempStarTo" + 1 + "Level" + i);
+            PlayerPrefs.DeleteKey("TempStarTo" + 2 + "Level" + i);
+            PlayerPrefs.DeleteKey("TempStarTo" + 3 + "Level" + i);
+        }
+    }
+
     // get star boolean at level
     public int GetStarToBoolean(int starTo, int level)
     {
@@ -66,27 +89,6 @@ public class PlayerPrefsManager : MonoBehaviour
     public void SetStarToBoolean(int starTo, int level, int boolean)
     {
         PlayerPrefs.SetInt("StarTo" + starTo + "Level" + level, boolean);
-    }
-
-    // get temp star timer boolean at level
-    public int GetTempStarTimerToBoolean(int level)
-    {
-        return PlayerPrefs.GetInt("TempStarTimerLevelBoolean" + level, 0);
-    }
-
-    // set temp star timer boolean at level
-    public void SetTempStarTimerToBoolean(int level, int boolean)
-    {
-        PlayerPrefs.SetInt("TempStarTimerLevelBoolean" + level, boolean);
-    }
-
-    // delete all temp star boolean with current level
-    public void DeleteAllTempStarTimerToBoolean()
-    {
-        for (int i = 1; i <= GetLevelAt() + 1; i++)
-        {
-            PlayerPrefs.DeleteKey("TempStarTimerLevelBoolean" + i);
-        }
     }
     #endregion
 

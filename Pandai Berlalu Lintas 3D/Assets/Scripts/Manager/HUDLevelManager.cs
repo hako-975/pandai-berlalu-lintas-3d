@@ -34,11 +34,11 @@ public class HUDLevelManager : MonoBehaviour
 
     void Update()
     {
-        if (finishPoint.finishPanel == false)
+        if (finishPoint.isFinished == false)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (isPaused == false && FindObjectOfType<BackButton>() == true)
+                if (FindObjectOfType<BackButton>() == true)
                 {
                     FindObjectOfType<BackButton>().BackButtonAction();
                 }
@@ -48,13 +48,13 @@ public class HUDLevelManager : MonoBehaviour
                     sfx.NegativeButton();
                     settingsPanel.SetActive(false);
                 }
-                else if (isPaused == false)
+                else if (isPaused == true)
                 {
-                    PausedButton();
+                    ResumeButton();
                 }
                 else
                 {
-                    ResumeButton();
+                    PausedButton();
                 }
             }
         }
@@ -118,7 +118,7 @@ public class HUDLevelManager : MonoBehaviour
     {
         Time.timeScale = 1;
         sfx.PositiveButton();
-
+        PlayerPrefsManager.instance.DeleteAllTempStarToBoolean();
         yield return new WaitForSeconds(sfx.positiveButton.clip.length);
 
         PlayerPrefsManager.instance.SetNextScene(nextScene);

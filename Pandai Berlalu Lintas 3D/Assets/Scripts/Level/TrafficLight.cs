@@ -58,6 +58,7 @@ public class TrafficLight : MonoBehaviour
 
     IEnumerator DelayGreenToRed()
     {
+        yield return new WaitForSeconds(1f);
         // light 1
         green1.material = greenOut;
         yellow1.material = yellowOn;
@@ -84,6 +85,7 @@ public class TrafficLight : MonoBehaviour
 
     IEnumerator DelayRedToGreen()
     {
+        yield return new WaitForSeconds(1f);
         // light 2
         green2.material = greenOut;
         yellow2.material = yellowOn;

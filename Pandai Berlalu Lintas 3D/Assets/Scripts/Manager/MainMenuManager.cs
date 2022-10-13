@@ -101,7 +101,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator WaitSoundEffectToChangeScene(AudioSource buttonType, string lastScene)
     {
         buttonType.Play();
-
+        PlayerPrefsManager.instance.DeleteAllTempStarToBoolean();
         yield return new WaitForSeconds(buttonType.clip.length);
 
         PlayerPrefsManager.instance.SetNextScene(lastScene);
@@ -110,7 +110,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator WaitSoundEffectToQuit()
     {
         sfx.PositiveButton();
-
+        PlayerPrefsManager.instance.DeleteAllTempStarToBoolean();
         yield return new WaitForSeconds(sfx.positiveButton.clip.length);
 
         Application.Quit();
@@ -119,6 +119,7 @@ public class MainMenuManager : MonoBehaviour
     IEnumerator WaitSoundEffect(string sceneName)
     {
         sfx.StartButton();
+        PlayerPrefsManager.instance.DeleteAllTempStarToBoolean();
         yield return new WaitForSeconds(sfx.startButton.clip.length);
         PlayerPrefsManager.instance.SetNextScene(sceneName);
     }

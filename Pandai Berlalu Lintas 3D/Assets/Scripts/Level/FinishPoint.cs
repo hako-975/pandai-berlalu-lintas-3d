@@ -28,6 +28,21 @@ public class FinishPoint : MonoBehaviour
         {
             sfx.FinishSFX();
 
+            if (PlayerPrefsManager.instance.GetTempStarToBoolean(1, currentLevel) > 0)
+            {
+                PlayerPrefsManager.instance.SetStarToBoolean(1, currentLevel, 1);
+            }
+
+            if (PlayerPrefsManager.instance.GetTempStarToBoolean(2, currentLevel) > 0)
+            {
+                PlayerPrefsManager.instance.SetStarToBoolean(2, currentLevel, 1);
+            }
+
+            if (PlayerPrefsManager.instance.GetTempStarToBoolean(3, currentLevel) > 0)
+            {
+                PlayerPrefsManager.instance.SetStarToBoolean(3, currentLevel, 1);
+            }
+
             // unlocked new level
             int levelAt = PlayerPrefsManager.instance.GetLevelAt();
 

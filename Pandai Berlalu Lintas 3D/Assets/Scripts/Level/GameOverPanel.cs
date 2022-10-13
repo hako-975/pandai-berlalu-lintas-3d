@@ -12,17 +12,16 @@ public class GameOverPanel : MonoBehaviour
     {
         bodyText.text = message;
         rightAnswerText.text = rightAnswer; 
-        gameObject.SetActive(true);
     }
 
     public void ActiveGameOverPanel(float delay)
     {
-        StartCoroutine(Delay(delay));
+        CancelInvoke();
+        Invoke("GameObjectToActive", delay);
     }
 
-    IEnumerator Delay(float delay)
+    void GameObjectToActive()
     {
-        yield return new WaitForSeconds(delay);
         gameObject.SetActive(true);
     }
 }
