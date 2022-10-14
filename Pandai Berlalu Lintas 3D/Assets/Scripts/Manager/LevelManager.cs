@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0;
         for (int i = 0; i < questionsPanel.Length; i++)
         {
             questionsPanel[i].SetActive(false);
@@ -25,6 +26,7 @@ public class LevelManager : MonoBehaviour
 
     public void CloseOpeningPanel()
     {
+        Time.timeScale = 1;
         openingPanel.SetActive(false);
     }
 }

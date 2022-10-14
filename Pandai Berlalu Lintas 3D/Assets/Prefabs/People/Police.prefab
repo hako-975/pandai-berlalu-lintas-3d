@@ -338,6 +338,8 @@ GameObject:
   - component: {fileID: 7365054521060205073}
   - component: {fileID: 7365054521060205074}
   - component: {fileID: 4239449959677003497}
+  - component: {fileID: 2376989590142091204}
+  - component: {fileID: 8038635034659811346}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -392,6 +394,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf292ddb48b8ec94da5920df61ebc32b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &2376989590142091204
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365054521060205075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.2871838
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6435919, z: 0}
+--- !u!114 &8038635034659811346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365054521060205075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0741d3d03f53e7846a28c02c8d1dc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
+  gameOverMessage: "Kamu Kecelakaan! \nPerhatikanlah rambu lalu lintas agar selamat
+    sampai tujuan!"
+  rightAnswer: Jalan
+  isGameOver: 0
 --- !u!1 &7365054521095329188
 GameObject:
   m_ObjectHideFlags: 0

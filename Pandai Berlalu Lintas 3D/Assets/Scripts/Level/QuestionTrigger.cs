@@ -16,16 +16,8 @@ public class QuestionTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            InvokeRepeating("CheckAnimCar", 1, 0.1f);
-        }
-    }
-
-    void CheckAnimCar()
-    {
-        if (levelManager.car.animationIsPlaying == false)
-        {
+            levelManager.car.StopAnimation();
             levelManager.questionsPanel[questTo - 1].SetActive(true);
-            CancelInvoke(); 
         }
     }
 }

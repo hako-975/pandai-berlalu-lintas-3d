@@ -17,16 +17,20 @@ public class NextMoveTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            InvokeRepeating("CheckAnimCar", 1, 0.1f);
+            levelManager.car.StopAnimation();
+            nextMove.NextMoveCar();
         }
     }
 
-    void CheckAnimCar()
+    public void NextMoveDelay(float delay)
     {
-        if (levelManager.car.animationIsPlaying == false)
-        {
-            nextMove.NextMoveCar();
-            CancelInvoke();
-        }
+        StartCoroutine(Delay(delay));
+    }
+
+
+    IEnumerator Delay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        nextMove.NextMoveCar();
     }
 }

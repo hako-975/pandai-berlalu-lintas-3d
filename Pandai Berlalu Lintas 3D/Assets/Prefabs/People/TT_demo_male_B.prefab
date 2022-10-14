@@ -867,6 +867,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4556252919557079926}
   - component: {fileID: 4556252919557079921}
+  - component: {fileID: 597588206}
+  - component: {fileID: 6226918961846101574}
+  - component: {fileID: 597588205}
   m_Layer: 0
   m_Name: TT_demo_male_B
   m_TagString: Untagged
@@ -881,9 +884,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4556252919557079920}
-  m_LocalRotation: {x: -0, y: 0.1410942, z: -0, w: 0.98999625}
+  m_LocalRotation: {x: 0, y: 0.14109129, z: 0, w: 0.9899967}
   m_LocalPosition: {x: -22.64, y: 0.2, z: -2.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 4556252919712256208}
   - {fileID: 4556252919348645779}
@@ -909,6 +912,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &597588206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556252919557079920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf292ddb48b8ec94da5920df61ebc32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &6226918961846101574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556252919557079920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.238536
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6192682, z: 0}
+--- !u!114 &597588205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556252919557079920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0741d3d03f53e7846a28c02c8d1dc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
+  gameOverMessage: "Kamu menabrak pejalan kaki! \nPerhatikanlah jalanmu!"
+  rightAnswer: Berhenti
+  isGameOver: 0
 --- !u!1 &4556252919618898208
 GameObject:
   m_ObjectHideFlags: 0
