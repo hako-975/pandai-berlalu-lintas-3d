@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MusicManager
+  - CarBot
   layers:
   - Default
   - TransparentFX

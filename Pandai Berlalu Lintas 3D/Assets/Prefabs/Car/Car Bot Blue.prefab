@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 7153768583016781112}
   m_Layer: 0
   m_Name: Child Object
-  m_TagString: Untagged
+  m_TagString: CarBot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,6 +562,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
   gameOverMessage: Kamu Menabrak Kendaraan Lain!
+  rightAnswer: 
+  isGameOver: 0
 --- !u!65 &7153768583016781112
 BoxCollider:
   m_ObjectHideFlags: 0

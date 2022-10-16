@@ -77,6 +77,11 @@ public class Car : MonoBehaviour
         animation.Play();
     }
 
+    public void PlayAnimationName(string name)
+    {
+        animation.Play(name);
+    }
+
     public void StopAnimation()
     {
         transform.position = childObject.transform.position;

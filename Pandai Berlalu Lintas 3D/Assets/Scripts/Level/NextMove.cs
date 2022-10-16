@@ -13,7 +13,8 @@ public class NextMove : MonoBehaviour
     public bool nextTurnLeftSmall;
     public bool nextTurnRight;
     public bool nextTurnRightSmall;
-    
+    public bool nextPlayAnimationName;
+    public string animationName = "Forward";
     LevelManager levelManager;
 
     // Start is called before the first frame update
@@ -68,5 +69,11 @@ public class NextMove : MonoBehaviour
         {
             levelManager.car.CarTurnRightSmall();
         }
+
+        if (nextPlayAnimationName)
+        {
+            levelManager.car.PlayAnimationName(animationName);
+        }
     }
+
 }

@@ -15,6 +15,9 @@ public class SelectLevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(1, 2));
+        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(2, 2));
+        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(3, 2));
         sfx = FindObjectOfType<SFXManager>();
 
         int levelAt = PlayerPrefsManager.instance.GetLevelAt();
@@ -44,7 +47,7 @@ public class SelectLevelManager : MonoBehaviour
                 {
                     levelButtons[j].transform
                     .GetChild(1).transform // must 1
-                    .GetChild(0).transform // at star 1 to 4 start from 0 
+                    .GetChild(0).transform // at star 1 to 3 start from 0 
                     .GetChild(0) // must 0
                     .GetComponentInChildren<Image>().color = Color.white;
                 }
@@ -54,7 +57,7 @@ public class SelectLevelManager : MonoBehaviour
                 {
                     levelButtons[j].transform
                     .GetChild(1).transform // must 1
-                    .GetChild(1).transform // at star 1 to 4 start from 0 
+                    .GetChild(1).transform // at star 1 to 3 start from 0 
                     .GetChild(0) // must 0
                     .GetComponentInChildren<Image>().color = Color.white;
                 }
@@ -64,7 +67,7 @@ public class SelectLevelManager : MonoBehaviour
                 {
                     levelButtons[j].transform
                     .GetChild(1).transform // must 1
-                    .GetChild(2).transform // at star 1 to 4 start from 0 
+                    .GetChild(2).transform // at star 1 to 3 start from 0 
                     .GetChild(0) // must 0
                     .GetComponentInChildren<Image>().color = Color.white;
                 }

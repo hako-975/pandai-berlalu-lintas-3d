@@ -26,6 +26,8 @@ public class FinishPoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<Animation>().Stop();
+
             sfx.FinishSFX();
 
             if (PlayerPrefsManager.instance.GetTempStarToBoolean(1, currentLevel) > 0)
