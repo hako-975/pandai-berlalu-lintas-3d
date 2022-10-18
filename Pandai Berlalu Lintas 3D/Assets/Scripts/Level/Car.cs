@@ -8,12 +8,16 @@ public class Car : MonoBehaviour
 
     public GameObject childObject;
 
+    SFXManager sfx;
+
     [HideInInspector]
     public bool animationIsPlaying = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        sfx = FindObjectOfType<SFXManager>();
         animation = GetComponentInChildren<Animation>();
     }
 
@@ -29,56 +33,79 @@ public class Car : MonoBehaviour
 
     public void CarForward()
     {
+        sfx.SfxMove();
         animation.Play("Forward");
     }
 
     public void CarBackward()
     {
+        sfx.SfxMove();
         animation.Play("Backward");
     }
 
     public void CarLeftward()
     {
+        sfx.SfxMove();
         animation.Play("Leftward");
     }
 
     public void CarRightward()
     {
+        sfx.SfxMove();
         animation.Play("Rightward");
     }
 
     public void CarIdle()
     {
+        sfx.SfxIdle();
         animation.Play("Idle");
     }
 
     public void CarTurnRight()
     {
+        sfx.SfxTurn();
         animation.Play("TurnRight");
     }
 
     public void CarTurnRightSmall()
     {
+        sfx.SfxTurn();
         animation.Play("TurnRightSmall");
     }
 
     public void CarTurnLeft()
     {
+        sfx.SfxTurn();
         animation.Play("TurnLeft");
     }
-    
+
     public void CarTurnLeftSmall()
     {
+        sfx.SfxTurn();
         animation.Play("TurnLeftSmall");
+    }
+
+    public void CarLeftwardDelay(float delay)
+    {
+        StartCoroutine(LeftwardDelay(delay));
+    }
+
+    IEnumerator LeftwardDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        CarLeftward();
+
     }
 
     public void PlayAnimation()
     {
+        sfx.SfxMove();
         animation.Play();
     }
 
     public void PlayAnimationName(string name)
     {
+        sfx.SfxMove();
         animation.Play(name);
     }
 

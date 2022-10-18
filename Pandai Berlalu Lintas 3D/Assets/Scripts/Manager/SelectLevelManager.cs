@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class SelectLevelManager : MonoBehaviour
 {
+    public Button[] tahapButtons;
     public Button[] levelButtons;
-    
+    CurrentStar currentStar;
+
     public int TextMeshUGUI { get; private set; }
 
     SFXManager sfx;
@@ -15,9 +17,8 @@ public class SelectLevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(1, 2));
-        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(2, 2));
-        Debug.Log(PlayerPrefsManager.instance.GetStarToBoolean(3, 2));
+        currentStar = FindObjectOfType<CurrentStar>();
+
         sfx = FindObjectOfType<SFXManager>();
 
         int levelAt = PlayerPrefsManager.instance.GetLevelAt();
@@ -74,6 +75,23 @@ public class SelectLevelManager : MonoBehaviour
 
                 levelButtons[j].onClick.AddListener(delegate { Level(l + 1); });
             }
+        }
+
+        for (int tahap = 0; tahap < tahapButtons.Length; tahap++)
+        {
+            tahapButtons[tahap].interactable = false;
+        }
+
+        tahapButtons[0].interactable = true;
+        
+        if (currentStar.currentStar >= 9)
+        {
+            tahapButtons[1].interactable = true;
+        }
+
+        if (currentStar.currentStar >= 18)
+        {
+            tahapButtons[2].interactable = true;
         }
     }
 

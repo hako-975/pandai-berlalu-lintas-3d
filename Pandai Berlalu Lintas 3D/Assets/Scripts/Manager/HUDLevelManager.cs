@@ -62,6 +62,9 @@ public class HUDLevelManager : MonoBehaviour
         if (finishPoint.isFinished)
         {
             musicMixer.SetFloat("VolumeMusic", -100f);
+            sfx.carMove.Stop();
+            sfx.carTurn.Stop();
+            sfx.carIdle.Stop();
             finishPanel.SetActive(true);
         }
 
@@ -77,6 +80,9 @@ public class HUDLevelManager : MonoBehaviour
         sfx.NegativeButton();
         pausedPanel.SetActive(true);
         isPaused = true;
+        sfx.carMove.Stop();
+        sfx.carTurn.Stop();
+        sfx.carIdle.Stop();
     }
 
     public void ResumeButton()

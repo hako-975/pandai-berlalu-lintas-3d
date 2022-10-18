@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 {
+    SFXManager sfx;
+
     public GameOverPanel gameOverPanel;
     
     [TextArea(2, 3)]
@@ -13,7 +15,15 @@ public class GameOverTrigger : MonoBehaviour
 
     [HideInInspector]
     public bool isGameOver = false;
-    
+
+    public bool isCarCrash = true;
+    public bool isTicketed = false;
+
+    void Start()
+    {
+        sfx = FindObjectOfType<SFXManager>();
+    }
+
     public void OverrideGameOverMessage()
     {
         gameOverPanel.GameOverMessage(gameOverMessage, rightAnswer);
@@ -27,6 +37,19 @@ public class GameOverTrigger : MonoBehaviour
             gameOverPanel.GameOverMessage(gameOverMessage, rightAnswer);
             gameOverPanel.gameObject.SetActive(true);
             isGameOver = true;
+            if (isCarCrash)
+            {
+                sfx.CarCrash();
+            }
+
+            if (isTicketed)
+            {
+                sfx.Whistle();
+
+            }
+            sfx.carMove.Stop();
+            sfx.carTurn.Stop();
+            sfx.carIdle.Stop();
         }
     }
 }
