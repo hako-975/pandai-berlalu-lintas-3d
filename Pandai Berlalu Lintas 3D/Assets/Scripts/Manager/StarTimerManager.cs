@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class StarTimerManager : MonoBehaviour
 {
-    public float maxTimer = 10f;
+    float maxTimer = 15f;
     public TextMeshProUGUI timerText;
     public Image starTimer;
 
@@ -29,14 +29,7 @@ public class StarTimerManager : MonoBehaviour
 
             if (maxTimer > 0f)
             {
-                if (maxTimer.ToString().Length > 4)
-                {
-                    timerText.text = maxTimer.ToString().Substring(0, 4);
-                }
-                else
-                {
-                    timerText.text = maxTimer.ToString();
-                }
+                timerText.text = maxTimer.ToString("F0") + " Detik";
             }
             else
             {
